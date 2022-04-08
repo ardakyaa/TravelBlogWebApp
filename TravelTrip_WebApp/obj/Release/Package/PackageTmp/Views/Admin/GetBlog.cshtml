@@ -1,0 +1,28 @@
+﻿@model TravelTrip_WebApp.Models.Entities.Blog
+@{
+    ViewBag.Title = "GetBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(t0 => t0.Id)
+    @Html.TextBoxFor(t0 => t0.Id, new { @class = "form-control", @readonly ="readonly" })
+    <br />
+    @Html.LabelFor(t0 => t0.Header)
+    @Html.TextBoxFor(t0 => t0.Header, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(t0 => t0.Date)
+    @Html.TextBoxFor(t0 => t0.Date, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(t0 => t0.BlogImage)
+    @Html.TextBoxFor(t0 => t0.BlogImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(t0 => t0.BlogContent)
+    @Html.TextAreaFor(t0 => t0.BlogContent, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Blog Güncelle</button>
+}
+

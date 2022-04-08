@@ -1,0 +1,24 @@
+﻿@model TravelTrip_WebApp.Models.Entities.Comment
+@{
+    ViewBag.Title = "GetComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateComment", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(t0 => t0.Id)
+    @Html.TextBoxFor(t0 => t0.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(t0 => t0.UserName)
+    @Html.TextBoxFor(t0 => t0.UserName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(t0 => t0.Email)
+    @Html.TextBoxFor(t0 => t0.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(t0 => t0.UserComment)
+    @Html.TextAreaFor(t0 => t0.UserComment, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Yorum Güncelle</button>  
+}
